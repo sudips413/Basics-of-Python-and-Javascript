@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Callback</title>
+        <script>
+            function callback(sum){
+                document.getElementById("result").innerHTML = sum;
+            }
+            function add(waitTime, callback){
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+                var sum = parseInt(num1) + parseInt(num2);
+                setTimeout(function(){
+                    callback(sum);
+
+                }, 500);
+            }
+            
+        </script>
+    </head>
+    <body>
+        <p id="sum"></p>
+        <input id="num1" type="number"/>
+        <input id="num2" type="number"/>
+        <button onclick="add(500,callback)">Add</button>
+        <p id="result"></p>
+    </body>
+</html>

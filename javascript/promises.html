@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Promises
+        </title>
+       
+    </head>
+    <body>
+        <div class="row">
+            <p id="result">
+
+            </p>
+        </div>
+        <script>
+            function myDisplayer(some) {
+              document.getElementById("result").innerHTML = some;
+            }
+            
+            let myPromise = new Promise(function(myResolve, myReject) {
+              let x = 0;
+              if (x == 0) {
+                myResolve("success");
+              } else {
+                myReject("Error");
+              }
+            });
+            
+            myPromise.then(
+              function(value) {
+                myDisplayer(value);
+            },
+              function(error) {
+                myDisplayer(error);
+            }
+            );
+            </script>
+
+    </body>
+    
+</html>
