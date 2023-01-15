@@ -26,4 +26,7 @@ app.listen(3000,()=>{
     console.log("server is running on port 3000")
 }
 );
+app.post("/welcome",require("./middleware/auth"),(req,res)=>{
+    res.send("welcome");
+})
 app.use("/api", require("./routes/user"));

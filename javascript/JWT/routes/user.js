@@ -59,6 +59,37 @@ router.post('/register', async (req, res) => {
 }
 );
 router.post("/login", async (req, res) => {
+    try{
+        console.log(req.body);
+        const{email,password}=req.body;
+        console.log(email)
+        if(!(email && password)){
+            res.status(400).json({
+                message: "All input is required",
+                success: false,
+            })
+        }
+        const user = await User.findOne({email});
+        if(user &&(await bcrypt.compare(password, user.password))){
+            const token = jwt.sign(
+                {user_id: user._id, email},
+                TOKEN_KEY,
+                {
+                    expiresIn: "2h",
+                }
+            );
+            user.token=token;
+            res.status(200).json({
+                message: "User logged in successfully",
+                success: true,
+                data:user,
+            });
+        }
+
+    }
+    catch(error){
+        console.log(error);
+    }
 });
 
 module.exports = router;
