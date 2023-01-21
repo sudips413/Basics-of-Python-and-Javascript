@@ -9,3 +9,4 @@ def climbStairs(n, memo = {}):
     return memo[n]
 
 print(climbStairs(10))
+
