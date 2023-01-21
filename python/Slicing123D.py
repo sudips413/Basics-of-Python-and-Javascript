@@ -25,5 +25,3 @@ print(temp1,end="\n")
 #####3D array
 array1 = np.arange(24).reshape(2,3,4)
 print(array1,end="\n")
-
-
