@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cookie</title>
+    </head>
+    <body>
+        <input type="button" value="setCookie" onclick="setCookie()">  
+<input type="button" value="getCookie" onclick="getCookie()">  
+    <script>  
+    function setCookie()  
+    {  
+        document.cookie="username=Duke Martin";  
+    }  
+    function getCookie()  
+    {  
+        if(document.cookie.length!=0)  
+        {  
+            var array=document.cookie.split("=");  
+        alert("Name="+array[0]+" "+"Value="+array[1]);  
+        }  
+        else  
+        {  
+        alert("Cookie not available");  
+        }  
+    }  
+    </script
+    </body>
+</html>
