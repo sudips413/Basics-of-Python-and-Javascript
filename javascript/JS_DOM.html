@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolore, veniam, facilis illo quidem eveniet similique modi maiores autem hic ipsum magnam dolorum ab quisquam voluptatum eaque assumenda perferendis architecto.</p>
+        <p>This is the test paragraph 0</p>
+        <p>This is the test paragraph 1</p>
+        <p>This is the test paragraph 2</p>
+        <p>This is the test paragraph 3</p>
+    </div>
+    <span id="result">
+
+    </span>
+    <br/>
+    <button onClick="change()">Change</button>
+</body>
+<script>
+    x= document.getElementById("main");
+    y = x.getElementsByTagName("p");
+    console.log(y);
+    function change(){
+        //generate random number from 0 to 4
+        let randomNum = Math.floor(Math.random()*5);
+        //get the random paragraph
+        document.getElementById("result").innerHTML = y[randomNum].innerHTML;
+    }
+
+</script>
+</html>
