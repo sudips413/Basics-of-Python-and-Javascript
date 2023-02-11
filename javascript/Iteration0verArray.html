@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Use of For Each</h1>
+    <div id="demo"></div>
+    <h1>Use of Map</h1>
+    <div id="demo1"></div>
+</body>
+<script>
+    let cars=["BMW","Volvo","Saab","Ford","Fiat","Audi"];
+    let numbers = [1,2,3,4,5,6,7,8,9,10]
+    cars.forEach(((item,index)=>{
+        return(
+        document.getElementById("demo").innerHTML+=index + ":" + item + "<br/>"
+        )
+    }))
+    cars.map((item,index)=>{
+        return(
+        document.getElementById("demo1").innerHTML+=index+":" +item+ "<br/>"
+        )
+    })
+</script>
+</html>

@@ -16,3 +16,12 @@ console.log(arr.filter((num)=>num%3==0))
 console.log(arr.map((num,index)=>num**2))
 //print sum of all number
 console.log(arr.reduce((total,num)=>total+num))
+
+//map,foreach
+let arr1=[1,2,3,4,5]
+
+let double = arr1.forEach((num)=>num*2)
+console.log(double)
+
+let doubled = arr1.map((num)=>num*2)
+console.log(doubled)
